@@ -16,9 +16,20 @@ class IntListTest {
 		myIntList.add(20);
 		myIntList.add(30);
 		assertArrayEquals(new int[] {10, 20, 30}, myIntList.getElements());
+		assertEquals(3, myIntList.getLength());
 		assertEquals(10, myIntList.getElementAt(0));
 		assertEquals(20, myIntList.getElementAt(1));
 		assertEquals(30, myIntList.getElementAt(2));
+		
+		myIntList.removeLast();
+		myIntList.removeLast();
+		assertArrayEquals(new int[] {10}, myIntList.getElements());
+		assertEquals(1, myIntList.getLength());
+		assertEquals(10, myIntList.getElementAt(0));
+		
+		myIntList.removeLast();
+		assertArrayEquals(new int[0], myIntList.getElements());
+		assertEquals(0, myIntList.getLength());		
 	}
 
 }
